@@ -4,7 +4,7 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-	console.log('Conexion a mysql');
+	console.log('Conexion a mysql!!!');
    createTcpPool ();	
    console.log('Conexion establecida');
   res.send('Hello World!')
