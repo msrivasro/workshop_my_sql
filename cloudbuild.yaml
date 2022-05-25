@@ -1,15 +1,15 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/github.com/msrivasro/cloud_run_image_ip_privada:$COMMIT_SHA', '.' ]
+  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/github.com/msrivasro/cloud_run_image_ip_privada_srivas:$COMMIT_SHA', '.' ]
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/github.com/msrivasro/cloud_run_image_ip_privada:$COMMIT_SHA']
+  args: ['push', 'gcr.io/$PROJECT_ID/github.com/msrivasro/cloud_run_image_ip_privada_srivas:$COMMIT_SHA']
 - name: 'gcr.io/cloud-builders/gcloud'
   args:
     - 'run'
     - 'deploy'
     - 'cloudrunservice-srivas'
     - '--image'
-    - 'gcr.io/$PROJECT_ID/github.com/msrivasro/cloud_run_image_ip_privada:$COMMIT_SHA'
+    - 'gcr.io/$PROJECT_ID/github.com/msrivasro/cloud_run_image_ip_privada_srivas:$COMMIT_SHA'
     - '--region'
     - 'us-east4'
     - '--platform'
